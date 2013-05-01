@@ -39,7 +39,8 @@
         "SynapseSystemManagementPlugin",
         "SynapseZeitgeistPlugin",
         "SynapseImgUrPlugin",
-        "SynapseHybridSearchPlugin"
+        "SynapseHybridSearchPlugin",
+        "SynapseSshPlugin"
       ]
     }
   }

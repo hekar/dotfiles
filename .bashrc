@@ -104,6 +104,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-# mint-fortune
-/usr/bin/mint-fortune
-
+export PATH=$PATH:/home/user/bin/gradle/bin
+alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'

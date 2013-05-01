@@ -18,6 +18,8 @@
         <value type="int" value="6"/>
         <value type="int" value="5"/>
       </property>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="autohide" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -36,10 +38,14 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="thunar"/>
+        <value type="string" value="bluedevil-monolithic"/>
         <value type="string" value="steam"/>
         <value type="string" value="synapse"/>
-        <value type="string" value="mintupdate.py"/>
         <value type="string" value="pidgin"/>
+        <value type="string" value="bitcoin-qt"/>
+        <value type="string" value="ktorrent"/>
+        <value type="string" value="mintupdate.py"/>
       </property>
     </property>
     <property name="plugin-4" type="string" value="xfce4-mixer-plugin"/>
