@@ -2,8 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="oxygen-gtk"/>
-    <property name="IconThemeName" type="empty"/>
+    <property name="ThemeName" type="string" value="Adwaita"/>
+    <property name="IconThemeName" type="string" value="Mint-X-Dark"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -15,10 +15,10 @@
   </property>
   <property name="Xft" type="empty">
     <property name="DPI" type="empty"/>
-    <property name="Antialias" type="empty"/>
+    <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="empty"/>
-    <property name="HintStyle" type="empty"/>
-    <property name="RGBA" type="empty"/>
+    <property name="HintStyle" type="string" value="hintnone"/>
+    <property name="RGBA" type="string" value="vbgr"/>
   </property>
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="empty"/>
