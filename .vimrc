@@ -40,6 +40,7 @@ set tabstop=4
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
+map <F4> :wq!<Enter>
 :command WQ wq
 :command Wq wq
 :command W w
@@ -67,9 +68,15 @@ set noconfirm
 set history=1000
 set noshowmatch
 set guioptions-=r 
+
 set t_Co=256
-set bg=dark
+set list
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+
+set background=dark
 set guifont=Droid_Sans_Mono:h14:cANSI
+colorscheme solarized
 
 
 set pastetoggle=<F11>
@@ -81,7 +88,6 @@ filetype indent on
 set clipboard=unnamedplus
 set mouse-=a
 
-colorscheme solarized
 hi statusline ctermbg=green ctermfg=black cterm=none
 hi statuslinenc ctermbg=black ctermfg=green cterm=none
 hi vertsplit ctermbg=black ctermfg=black cterm=none
