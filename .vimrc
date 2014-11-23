@@ -1,4 +1,8 @@
+execute pathogen#infect()
 syntax on
+
+let mapleader=","
+set timeoutlen=1500
 
 set smartcase
 set noerrorbells
@@ -21,10 +25,22 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+nmap <F2> :update<CR>
+vmap <F2> <Esc><F2>gv
+imap <F2> <c-o><F2>
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+vmap <C-C> "+y
+map <C-V> "+p
+smap <C-p> <Plug>ActivateQS
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-D>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+map <C-k> dd
 
 set autoindent
 set ai
@@ -48,3 +64,7 @@ set mouse=a
 
 filetype plugin on
 filetype indent on
+
+set clipboard=unnamedplus
+set mouse-=a
+
