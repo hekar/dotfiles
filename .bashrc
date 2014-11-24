@@ -113,7 +113,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
 export ANDROID_SDK=/home/hekar/share/android-studio/sdk
 export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
@@ -130,3 +129,4 @@ alias sdps='sudo docker.io ps -a'
 alias sdi='sudo docker.io images'
 alias sdr='sudo docker.io run'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+alias gvim='gvim --servername GVIM --remote-tab $1 &'
