@@ -25,3 +25,6 @@ fi
 export PATH=$PATH:~/share/idea/bin/
 export CATALINA_HOME=~/share/tomcat
 export JAVA_HOME=~/share/jdk-7
+
+xmodmap -e "keysym Caps_Lock = Escape"
+
