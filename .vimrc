@@ -101,7 +101,6 @@ map <F4> :wq!<Enter>
 map <C-k> dd
 map <C-t> :tabnew .<Enter>
 map <C-w> :bdelete<Enter>
-map <C-f> :/
 map <C-h> :s/
 
 " ----------------------
@@ -256,6 +255,8 @@ nnoremap \ :Ag<SPACE>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'

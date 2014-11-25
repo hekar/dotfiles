@@ -58,6 +58,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export VAGRANT_RSYNC=true
+
 # User configuration
 export ANDROID_SDK=/home/hekar/share/android-studio/sdk
 export PATH=$ANDROID_SDK:$PATH
@@ -75,4 +77,12 @@ alias sdps='sudo docker.io ps -a'
 alias sdi='sudo docker.io images'
 alias sdr='sudo docker.io run'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
-alias gvim='gvim --servername GVIM --remote-tab'
+alias g1='gvim --servername g1 --remote-tab'
+alias g2='gvim --servername g2 --remote-tab'
+alias g3='gvim --servername g3 --remote-tab'
+alias g4='gvim --servername g4 --remote-tab'
+alias g5='gvim --servername g5 --remote-tab'
+alias g6='gvim --servername g6 --remote-tab'
+alias g7='gvim --servername g7 --remote-tab'
+alias g8='gvim --servername g8 --remote-tab'
+
