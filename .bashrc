@@ -78,3 +78,4 @@ alias sdi='sudo docker.io images'
 alias sdr='sudo docker.io run'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
 
+[[ -s "/home/hekar/.gvm/scripts/gvm" ]] && source "/home/hekar/.gvm/scripts/gvm"
