@@ -61,7 +61,7 @@ fi
 export VAGRANT_RSYNC=true
 
 # User configuration
-export ANDROID_SDK=/home/hekar/share/android-studio/sdk
+export ANDROID_SDK=/home/hekar/Android/Sdk
 export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
 export PATH=$ANDROID_SDK/platform-tools:$PATH
