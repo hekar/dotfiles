@@ -36,17 +36,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -58,24 +47,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export VAGRANT_RSYNC=true
-
-# User configuration
-export ANDROID_SDK=/home/hekar/Android/Sdk
-export PATH=$ANDROID_SDK:$PATH
-export PATH=$ANDROID_SDK/tools:$PATH
-export PATH=$ANDROID_SDK/platform-tools:$PATH
-
-export JAVA_HOME=/home/hekar/share/jdk
-export PATH=$JAVA_HOME:$PATH
-
-export CROSSWALK=/home/hekar/share/crosswalk
-export PATH=$CROSSWALK:$PATH
-
-alias sd='sudo docker.io'
-alias sdps='sudo docker.io ps -a'
-alias sdi='sudo docker.io images'
-alias sdr='sudo docker.io run'
-alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
-
-[[ -s "/home/hekar/.gvm/scripts/gvm" ]] && source "/home/hekar/.gvm/scripts/gvm"
