@@ -6,6 +6,7 @@ export ANDROID_HOME=$ANDROID_SDK
 export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
 export PATH=$ANDROID_SDK/platform-tools:$PATH
+export PATH=$PATH:.
 
 export JAVA_HOME=/home/hekar/share/jdk
 export JDK_HOME=$JAVA_HOME
@@ -20,6 +21,10 @@ alias sdps='sudo docker.io ps -a'
 alias sdi='sudo docker.io images'
 alias sdr='sudo docker.io run'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+alias code='cd ~/code/'
+alias mobile='cd ~/code/core-mobile'
+alias web='cd ~/code/nimbus'
+
 
 [[ -s "/home/hekar/.gvm/scripts/gvm" ]] && source "/home/hekar/.gvm/scripts/gvm"
 
