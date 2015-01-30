@@ -1,30 +1,33 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+export VAGRANT_RSYNC=true
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+# User configuration
+export ANDROID_SDK=/home/hekar/Android/Sdk
+export ANDROID_HOME=$ANDROID_SDK
+export PATH=$ANDROID_SDK:$PATH
+export PATH=$ANDROID_SDK/tools:$PATH
+export PATH=$ANDROID_SDK/platform-tools:$PATH
 
-# if running bash
+export JAVA_HOME=/home/hekar/share/jdk
+export JDK_HOME=$JAVA_HOME
+export STUDIO_JDK=$JAVA_HOME
+export PATH=$JAVA_HOME:$PATH
+
+export CROSSWALK=/home/hekar/share/crosswalk
+export PATH=$CROSSWALK:$PATH
+
+alias sd='sudo docker.io'
+alias sdps='sudo docker.io ps -a'
+alias sdi='sudo docker.io images'
+alias sdr='sudo docker.io run'
+alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+
+[[ -s "/home/hekar/.gvm/scripts/gvm" ]] && source "/home/hekar/.gvm/scripts/gvm"
+
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
-
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-
-export PATH=$PATH:~/share/idea/bin/
-export CATALINA_HOME=~/share/tomcat
-export JAVA_HOME=~/share/jdk-7
-
-xmodmap -e "keysym Caps_Lock = Escape"
-
