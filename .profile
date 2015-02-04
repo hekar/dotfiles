@@ -1,5 +1,3 @@
-export VAGRANT_RSYNC=true
-
 [[ -s "/home/hekar/.gvm/scripts/gvm" ]] && source "/home/hekar/.gvm/scripts/gvm"
 
 if [ -n "$BASH_VERSION" ]; then

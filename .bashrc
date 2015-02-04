@@ -47,3 +47,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# export VAGRANT_RSYNC=true

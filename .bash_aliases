@@ -27,9 +27,19 @@ export PATH=$JAVA_HOME:$PATH
 export CROSSWALK=/home/hekar/share/crosswalk
 export PATH=$CROSSWALK:$PATH
 
-alias sd='sudo docker.io'
-alias sdps='sudo docker.io ps -a'
-alias sdi='sudo docker.io images'
-alias sdr='sudo docker.io run'
+export DOCKER=docker.io
+alias sd='sudo $DOCKER'
+alias sdps='sudo $DOCKER ps -a'
+alias sdpsa='sudo $DOCKER ps -a'
+alias sdi='sudo $DOCKER images'
+alias sdr='sudo $DOCKER run'
+alias sddpsa='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
+alias sddid='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+alias gp='git pull'
+alias gr='git rebase -i'
+alias web='cd ~/code/nimbus'
+alias mobile='cd ~/code/core-mobile'
+alias chef-repo='cd ~/code/chef-repo'
+alias cloud-admin='cd ~/code/cloud-admin'
 
