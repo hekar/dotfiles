@@ -1,10 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/hekar/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -54,33 +50,6 @@ export PATH="/home/hekar/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/game
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#!/bin/bash
-
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -91,6 +60,8 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+export EDITOR=vim
 
 # User configuration
 export LANGUAGE=en
@@ -124,3 +95,7 @@ alias mobile='cd ~/code/core-mobile'
 alias chef-repo='cd ~/code/chef-repo'
 alias cloud-admin='cd ~/code/cloud-admin'
 
+export PATH=$PATH:/home/hekar/bin:/home/hekar/share/elixir/bin
+alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
+export NVM_DIR="/home/hekar/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
