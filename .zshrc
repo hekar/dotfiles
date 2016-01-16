@@ -45,7 +45,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/hekar/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games"
+export PATH="/home/hekar/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,7 +81,7 @@ export PATH=$CROSSWALK:$PATH
 
 export DOCKER=docker.io
 alias sd='sudo $DOCKER'
-alias sdps='sudo $DOCKER ps -a'
+alias sdps='sudo $DOCKER ps'
 alias sdpsa='sudo $DOCKER ps -a'
 alias sdi='sudo $DOCKER images'
 alias sdr='sudo $DOCKER run'
@@ -90,12 +90,14 @@ alias sddid='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
 alias gp='git pull'
 alias gr='git rebase -i'
-alias web='cd ~/code/nimbus'
-alias mobile='cd ~/code/core-mobile'
-alias chef-repo='cd ~/code/chef-repo'
-alias cloud-admin='cd ~/code/cloud-admin'
+alias gpu='git push'
+alias di='sudo dnf install -y'
+alias ds='sudo dnf search'
+alias td='cd /media/share/Desktop/downloads'
+alias df='df -h'
+alias usage='du -d 1 -h'
 
-export PATH=$PATH:/home/hekar/bin:/home/hekar/share/elixir/bin
+export PATH=$PATH:/home/hekar/share/elixir/bin
 alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
 export NVM_DIR="/home/hekar/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
