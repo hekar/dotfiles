@@ -9,3 +9,6 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+XDG_CURRENT_DESKTOP=KDE
+

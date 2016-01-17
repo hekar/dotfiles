@@ -97,6 +97,7 @@ noremap <C-O> <C-V>
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
+map <F3> :w<Enter>
 map <F4> :wq!<Enter>
 map <C-k> dd
 map <C-t> :tabnew .<Enter>
