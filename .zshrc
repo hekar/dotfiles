@@ -79,12 +79,13 @@ export PATH=$JAVA_HOME:$PATH
 export CROSSWALK=/home/hekar/share/crosswalk
 export PATH=$CROSSWALK:$PATH
 
-export DOCKER=docker.io
+export DOCKER=docker
 alias sd='sudo $DOCKER'
 alias sdps='sudo $DOCKER ps'
 alias sdpsa='sudo $DOCKER ps -a'
 alias sdi='sudo $DOCKER images'
 alias sdr='sudo $DOCKER run'
+alias sdb='sudo $DOCKER build'
 alias sddpsa='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
 alias sddid='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
