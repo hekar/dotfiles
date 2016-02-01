@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/hekar/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+#ZSH_THEME="amuse"
+ZSH_THEME="bureau"
 
 export UPDATE_ZSH_DAYS=30
 
@@ -77,6 +78,20 @@ export JAVA_HOME=$HOME/share/jdk
 export JDK_HOME=$JAVA_HOME
 export STUDIO_JDK=$JAVA_HOME
 export PATH=$JAVA_HOME:$PATH
+
+#IPTables
+alias ipt='sudo /sbin/iptables'
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall=iptlist
+
+# Sec
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias rm='rm -I --preserve-root'
 
 # Misc
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
