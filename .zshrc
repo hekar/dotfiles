@@ -48,21 +48,35 @@ alias ds='sudo dnf search'
 # Docker
 export DOCKER=docker
 alias sd='sudo $DOCKER'
-alias sdps='sudo $DOCKER ps'
-alias sdpsa='sudo $DOCKER ps -a'
-alias sdi='sudo $DOCKER images'
-alias sdr='sudo $DOCKER run'
-alias sdb='sudo $DOCKER build'
-alias sddpsa='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
-alias sddid='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
+alias sd-ps='sudo $DOCKER ps -a'
+alias sd-images='sudo $DOCKER images'
+alias sd-run='sudo $DOCKER run'
+alias sd-build='sudo $DOCKER build'
+alias sd-restart='sudo $DOCKER restart'
+alias sd-kill-all='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
+alias sd-remove-all='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
 
 # Docker Compose
 export DOCKER_COMPOSE=docker-compose
 alias sdc-build='sudo $DOCKER_COMPOSE build'
-alias sdc-up='sudo $DOCKER_COMPOSE --enable-networking up'
+alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-stop='sudo $DOCKER_COMPOSE stop'
 alias sdc-restart='sudo $DOCKER_COMPOSE stop'
 alias sdc-kill='sudo $DOCKER_COMPOSE stop'
+alias sdc-build='sudo $DOCKER_COMPOSE build'
+alias sdc-kill='sudo $DOCKER_COMPOSE kill'
+alias sdc-logs='sudo $DOCKER_COMPOSE logs'
+alias sdc-port='sudo $DOCKER_COMPOSE port'
+alias sdc-ps='sudo $DOCKER_COMPOSE ps'
+alias sdc-pull='sudo $DOCKER_COMPOSE pull'
+alias sdc-restart='sudo $DOCKER_COMPOSE restart'
+alias sdc-rm='sudo $DOCKER_COMPOSE rm'
+alias sdc-run='sudo $DOCKER_COMPOSE run'
+alias sdc-scale='sudo $DOCKER_COMPOSE scale'
+alias sdc-start='sudo $DOCKER_COMPOSE start'
+alias sdc-stop='sudo $DOCKER_COMPOSE stop'
+alias sdc-up='sudo $DOCKER_COMPOSE up'
+alias sdc-version='sudo $DOCKER_COMPOSE version'
 
 # Elixir
 alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
@@ -102,4 +116,3 @@ alias usage='du -d 1 -h'
 
 export NVM_DIR="/home/hekar/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
