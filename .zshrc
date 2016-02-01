@@ -46,7 +46,6 @@ plugins=(git)
 # User configuration
 
 export PATH="/home/hekar/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,7 +62,7 @@ alias l='ls -CF'
 
 export EDITOR=vim
 
-# User configuration
+# Android
 export LANGUAGE=en
 export ANDROID_SDK=/home/hekar/Android/Sdk
 export ANDROID_HOME=$ANDROID_SDK
@@ -71,14 +70,11 @@ export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
 export PATH=$ANDROID_SDK/platform-tools:$PATH
 
-export JAVA_HOME=$HOME/share/jdk
-export JDK_HOME=$JAVA_HOME
-export STUDIO_JDK=$JAVA_HOME
-export PATH=$JAVA_HOME:$PATH
+# DNF
+alias di='sudo dnf install -y'
+alias ds='sudo dnf search'
 
-export CROSSWALK=/home/hekar/share/crosswalk
-export PATH=$CROSSWALK:$PATH
-
+# Docker
 export DOCKER=docker
 alias sd='sudo $DOCKER'
 alias sdps='sudo $DOCKER ps'
@@ -88,17 +84,37 @@ alias sdr='sudo $DOCKER run'
 alias sdb='sudo $DOCKER build'
 alias sddpsa='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
 alias sddid='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
-alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+
+# Docker Compose
+export DOCKER_COMPOSE=docker-compose
+alias sdc-build='sudo $DOCKER_COMPOSE build'
+alias sdc-up='sudo $DOCKER_COMPOSE --enable-networking up'
+alias sdc-stop='sudo $DOCKER_COMPOSE stop'
+alias sdc-restart='sudo $DOCKER_COMPOSE stop'
+alias sdc-kill='sudo $DOCKER_COMPOSE stop'
+
+# Elixir
+alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
+export PATH=$PATH:/home/hekar/share/elixir/bin
+
+# Git
 alias gp='git pull'
 alias gr='git rebase -i'
 alias gpu='git push'
-alias di='sudo dnf install -y'
-alias ds='sudo dnf search'
-alias td='cd /media/share/Desktop/downloads'
+
+# Java
+export JAVA_HOME=$HOME/share/jdk
+export JDK_HOME=$JAVA_HOME
+export STUDIO_JDK=$JAVA_HOME
+export PATH=$JAVA_HOME:$PATH
+
+# Misc
+alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+alias grn='grep -nir'
+alias media='cd /media/share/complete'
 alias df='df -h'
 alias usage='du -d 1 -h'
 
-export PATH=$PATH:/home/hekar/share/elixir/bin
-alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
 export NVM_DIR="/home/hekar/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
