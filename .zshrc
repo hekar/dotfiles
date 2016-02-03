@@ -79,7 +79,9 @@ alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-version='sudo $DOCKER_COMPOSE version'
 
 # Elixir
-alias cs="cd /home/hekar/Dropbox/phoenix/installer/cs"
+alias ca="cd /home/hekar/Dropbox/ca"
+alias ca-lib="cd /home/hekar/Dropbox/ca/lib/"
+alias ca-web="cd /home/hekar/Dropbox/ca/web/"
 export PATH=$PATH:/home/hekar/share/elixir/bin
 
 # Git
