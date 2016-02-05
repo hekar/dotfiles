@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/hekar/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="amuse"
 ZSH_THEME="bureau"
@@ -27,7 +27,7 @@ base_plugins=(git adb common-aliases systemd urltools vagrant web-search nyan do
 
 # User configuration
 
-export PATH="/home/hekar/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -65,7 +65,7 @@ fi
 
 # Android
 export LANGUAGE=en
-export ANDROID_SDK=/home/hekar/Android/Sdk
+export ANDROID_SDK=$HOME/Android/Sdk
 export ANDROID_HOME=$ANDROID_SDK
 export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
@@ -105,10 +105,10 @@ alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-version='sudo $DOCKER_COMPOSE version'
 
 # Elixir
-alias ca="cd /home/hekar/Dropbox/ca"
-alias ca-lib="cd /home/hekar/Dropbox/ca/lib/"
-alias ca-web="cd /home/hekar/Dropbox/ca/web/"
-export PATH=$PATH:/home/hekar/share/elixir/bin
+alias ca="cd $HOME/Dropbox/ca"
+alias ca-lib="cd $HOME/Dropbox/ca/lib/"
+alias ca-web="cd $HOME/Dropbox/ca/web/"
+export PATH=$PATH:$HOME/share/elixir/bin
 
 # Git
 alias gp='git pull'
@@ -142,5 +142,5 @@ alias media='cd /media/share/complete'
 alias df='df -h'
 alias usage='du -d 1 -h'
 
-export NVM_DIR="/home/hekar/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
