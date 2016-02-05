@@ -5,6 +5,10 @@ Linux distribution home folder and vim configuration
 
 
 ## Setup
-1. `git clone https://github.com/hekar/vim-n-home.git`
-1. `Move to ~/. Rename .git to .homegit`
+```
+git clone git@github.com:hekar/vim-n-home.git
+cp -R ./vim-n-home/. ~/
+mv ~/.git ~/.homegit
+rm -Rf ./vim-n-home
+```
 
