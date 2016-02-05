@@ -64,12 +64,7 @@ set t_Co=256
 set wildmenu " display options for tab completion in command mode
 set wildmode=list:longest
 set virtualedit=
-
-" Commands
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+set clipboard=unnamed
 
 " ----------------------
 " Default key mappings
@@ -103,6 +98,8 @@ map <C-k> dd
 map <C-t> :tabnew .<Enter>
 map <C-w> :bdelete<Enter>
 map <C-h> :s/
+map <leader>[ :bprev<CR>
+map <leader>] :bnext<CR>
 
 " ----------------------
 " Plugin options
