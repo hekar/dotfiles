@@ -103,6 +103,11 @@ alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
 alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
 alias firewall=iptlist
 
+# Power states
+alias sc-suspend='sudo systemctl suspend'
+alias sc-halt='sudo systemctl poweroff'
+alias sc-reboot='sudo systemctl reboot'
+
 # Sec
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
