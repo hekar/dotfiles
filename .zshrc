@@ -23,7 +23,7 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git adb common-aliases systemd urltools vagrant web-search nyan docker dirhistory rsync)
+base_plugins=(git adb common-aliases systemd urltools vagrant web-search nyan docker docker-compose dirhistory rsync)
 
 # User configuration
 
@@ -33,6 +33,36 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 
+export DOCKER=docker
+# Distribution specific
+if python -mplatform | grep -q -i ubuntu; then
+  export DOCKER=docker.io
+  add_plugins=(ubuntu)
+  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
+elif python -mplatform | grep -q -i fedora; then
+  alias di='sudo dnf install -y'
+  alias ds='sudo dnf search'
+  alias dr='sudo dnf remove'
+  alias dp='sudo dnf provides'
+  alias dnf-history='sudo dnf history'
+  alias dnf-repolist='sudo dnf repolist'
+  alias dnf-search='sudo dnf search'
+  alias dnf-install='sudo dnf install'
+  alias dnf-reinstall='sudo dnf reinstall'
+  alias dnf-provides='sudo dnf provides'
+  alias dnf-list='sudo dnf list'
+  add_plugins=(yum)
+  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
+elif python -mplatform | grep -q -i centos; then
+  add_plugins=(yum)
+  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
+elif python -mplatform | grep -q -i opensuse; then
+  add_plugins=(zypper)
+  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
+else
+  plugins=$base_plugins
+fi
+
 # Android
 export LANGUAGE=en
 export ANDROID_SDK=/home/hekar/Android/Sdk
@@ -41,20 +71,16 @@ export PATH=$ANDROID_SDK:$PATH
 export PATH=$ANDROID_SDK/tools:$PATH
 export PATH=$ANDROID_SDK/platform-tools:$PATH
 
-# DNF
-alias di='sudo dnf install -y'
-alias ds='sudo dnf search'
-
 # Docker
-export DOCKER=docker
 alias sd='sudo $DOCKER'
 alias sd-ps='sudo $DOCKER ps -a'
+alias sd-inspect='sudo $DOCKER inspect'
 alias sd-images='sudo $DOCKER images'
 alias sd-run='sudo $DOCKER run'
 alias sd-build='sudo $DOCKER build'
 alias sd-restart='sudo $DOCKER restart'
-alias sd-kill-all='sudo $DOCKER kill -f $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
-alias sd-remove-all='sudo $DOCKER rmi $(sudo $DOCKER images -q -f dangling=true)'
+alias sd-kill-all='sudo $DOCKER kill $(sudo $DOCKER ps -q) && docker rm -f $(sudo $DOCKER ps -a -q)'
+alias sd-remove-all='sudo $DOCKER rmi -f $(sudo $DOCKER images -q)'
 
 # Docker Compose
 export DOCKER_COMPOSE=docker-compose
