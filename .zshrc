@@ -84,6 +84,7 @@ alias sd-remove-all='sudo $DOCKER rmi -f $(sudo $DOCKER images -q)'
 
 # Docker Compose
 export DOCKER_COMPOSE=docker-compose
+alias sdc-rup='sudo $DOCKER_COMPOSE rm -f && sudo $DOCKER up'
 alias sdc-build='sudo $DOCKER_COMPOSE build'
 alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-stop='sudo $DOCKER_COMPOSE stop'
