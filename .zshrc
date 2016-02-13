@@ -29,8 +29,6 @@ base_plugins=(git adb common-aliases systemd urltools vagrant web-search nyan do
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
 
-source $ZSH/oh-my-zsh.sh
-
 export EDITOR=vim
 
 export DOCKER=docker
@@ -62,6 +60,8 @@ elif python -mplatform | grep -q -i opensuse; then
 else
   plugins=$base_plugins
 fi
+
+source $ZSH/oh-my-zsh.sh
 
 # Android
 export LANGUAGE=en
