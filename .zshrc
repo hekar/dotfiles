@@ -6,16 +6,6 @@ ZSH_THEME="bureau"
 
 export UPDATE_ZSH_DAYS=30
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -40,19 +30,10 @@ if python -mplatform | grep -q -i ubuntu; then
 elif python -mplatform | grep -q -i fedora; then
   alias di='sudo dnf install -y'
   alias ds='sudo dnf search'
-  alias dr='sudo dnf remove'
-  alias dp='sudo dnf provides'
-  alias dnf-history='sudo dnf history'
-  alias dnf-repolist='sudo dnf repolist'
-  alias dnf-search='sudo dnf search'
-  alias dnf-install='sudo dnf install'
-  alias dnf-reinstall='sudo dnf reinstall'
-  alias dnf-provides='sudo dnf provides'
-  alias dnf-list='sudo dnf list'
-  add_plugins=(yum)
+  add_plugins=(dnf)
   plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
 elif python -mplatform | grep -q -i centos; then
-  add_plugins=(yum)
+  add_plugins=(dnf)
   plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
 elif python -mplatform | grep -q -i opensuse; then
   add_plugins=(zypper)
@@ -62,6 +43,10 @@ else
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+if python -mplatform | grep -q -i ubuntu; then
+  unalias ag
+fi
 
 # Android
 export LANGUAGE=en
