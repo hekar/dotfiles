@@ -28,6 +28,15 @@ else
   echo "Your Linux distribution is not supported"
 fi
 
+# Install node version manager
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install 4 && nvm install 5
+nvm alias default 4
+
+# Install Atom Text Editor packages
+apm install sync-settings editorconfig linter linter-eslint atom-beautify
+
 # Install vim-n-home
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
 git clone git@github.com:hekar/vim-n-home.git &&
