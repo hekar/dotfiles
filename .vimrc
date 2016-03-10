@@ -94,6 +94,7 @@ vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
 map <F3> :w<Enter>
 map <F4> :wq!<Enter>
+map <F5> gg=G
 map <C-k> dd
 map <C-t> :tabnew .<Enter>
 map <C-w> :bdelete<Enter>
@@ -247,7 +248,7 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
