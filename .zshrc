@@ -94,7 +94,7 @@ alias sdc-version='sudo $DOCKER_COMPOSE version'
 alias ca="cd $HOME/Dropbox/ca"
 alias ca-lib="cd $HOME/Dropbox/ca/lib/"
 alias ca-web="cd $HOME/Dropbox/ca/web/"
-export PATH=$PATH:$HOME/share/elixir/bin
+export PATH=$PATH:$HOME/share/elixir/bin:$HOME/share/firefox/
 
 # Git
 alias gp='git pull'

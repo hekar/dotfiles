@@ -42,6 +42,20 @@ nvm alias default 4
 # Install Atom Text Editor packages
 apm install sync-settings editorconfig linter linter-eslint atom-beautify
 
+# ============================
+# Setup Applications in ~/share
+
+mkdir $HOME/share
+cd $HOME/share
+
+# neofetch
+git clone git@github.com:dylanaraps/neofetch.git
+
+# youtube-open
+git clone git@github.com:hekar/youtube-open.git
+
+cd -
+
 # Install vim-n-home
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
 git clone git@github.com:hekar/vim-n-home.git &&
