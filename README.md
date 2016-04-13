@@ -1,9 +1,9 @@
 dotfiles
 ==========
 
-These are my dotfiles. I have not changed the repository name, because many machines are pointed to this repository.
+These are my dotfiles. Have not changed the repository name, because many machines are pointed to this repository.
 
-I primarily use Fedora. Beyond Fedora is not well tested, unless I have recently configured a machine with that operating system.
+I primarily use Fedora. OSes other than Fedora are not well tested.
 
 Loosely supports the following Linux distributions:
 
@@ -12,12 +12,13 @@ Loosely supports the following Linux distributions:
 1. [CentOS](https://www.centos.org/).
 1. [Ubuntu](http://www.ubuntu.com/) (Partial support)
 
-Contains configuration:
+Installs and configures:
 
 1. [i3](https://i3wm.org/)
 1. [vim](http://www.vim.org/)
 1. [zsh](http://www.zsh.org/)
 1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+1. [atom](https://atom.io/)
 
 ## Quick Setup
 
