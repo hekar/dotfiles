@@ -38,7 +38,7 @@ Few keyboard shortcuts are listed, because the likelihood of this being used by 
 ### i3
 
 | Description           | Key                 |
-|-|-|
+|-----------------------|---------------------|
 | Lock Screen           | Mod + L             |
 | Switch Workspace      | Mod + (1-9)           |
 | Move Window to Workspace | Mod + Shift + (1-9)             |
