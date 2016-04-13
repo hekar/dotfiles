@@ -1,15 +1,16 @@
-vim-n-home
+dotfiles
 ==========
 
-Linux distribution home folder.
+These are my dotfiles. I have not changed the repository name, because many machines are pointed to this repository.
 
-Supports the following Linux distributions:
+I primarily use Fedora. Beyond Fedora is not well tested, unless I have recently configured a machine with that operating system.
+
+Loosely supports the following Linux distributions:
 
 1. [Fedora](https://getfedora.org/)
-1. [Ubuntu](http://www.ubuntu.com/)
 1. [OpenSUSE](https://www.opensuse.org/)
-
-There is partial support for [CentOS](https://www.centos.org/).
+1. [CentOS](https://www.centos.org/).
+1. [Ubuntu](http://www.ubuntu.com/) (Partial support)
 
 Contains configuration:
 
@@ -30,7 +31,14 @@ sh -c "$(curl -fsSL https://raw.github.com/hekar/vim-n-home/master/setup.sh)"
 
 Clone this repository. Copy the contents (including hidden files) to ~/.
 
-
 ## Shortcuts
 
+Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is rather slim.
 
+### i3
+
+| Description           | Key                 |
+|-|-|
+| Lock Screen           | Mod + L             |
+| Switch Workspace      | Mod + (1-9)           |
+| Move Window to Workspace | Mod + Shift + (1-9)             |

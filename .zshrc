@@ -94,18 +94,11 @@ alias sdc-version='sudo $DOCKER_COMPOSE version'
 alias ca="cd $HOME/Dropbox/ca"
 alias ca-lib="cd $HOME/Dropbox/ca/lib/"
 alias ca-web="cd $HOME/Dropbox/ca/web/"
-export PATH=$PATH:$HOME/share/elixir/bin:$HOME/share/firefox/
 
 # Git
 alias gp='git pull'
 alias gr='git rebase -i'
 alias gpu='git push'
-
-# Java
-export JAVA_HOME=$HOME/share/jdk
-export JDK_HOME=$JAVA_HOME
-export STUDIO_JDK=$JAVA_HOME
-export PATH=$JAVA_HOME:$PATH
 
 #IPTables
 alias ipt='sudo /sbin/iptables'
@@ -135,3 +128,9 @@ alias usage='du -d 1 -h'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+PATH="/home/hekar/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/hekar/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/hekar/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/hekar/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/hekar/perl5"; export PERL_MM_OPT;
