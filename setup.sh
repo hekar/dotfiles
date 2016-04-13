@@ -1,5 +1,7 @@
 #!/bin/sh
 
+generic_elixir="https://github.com/elixir-lang/elixir.git"
+
 deb_packages="git git-gui vim g++ zsh docker docker-compose"
 deb_atom="https://github.com/atom/atom/releases/download/v1.5.3/atom-amd64.deb"
 deb_dropbox="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
@@ -9,7 +11,6 @@ deb_erlang=""
 rhel_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark"
 rhel_atom="https://github.com/atom/atom/releases/download/v1.5.3/atom.x86_64.rpm"
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
-rhel_elixir="https://github.com/elixir-lang/elixir.git"
 rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_18.2-1~centos~7_amd64.rpm"
 
 # Commands
@@ -29,18 +30,14 @@ elif python -mplatform | grep -q -i fedora; then
   dnf_install $rhel_atom
   dnf_install $rhel_dropbox
   dnf_install $rhel_erlang
-  git clone $rhel_elixir && cd elixir && git checkout v1.2.3 && sudo make install
-elif python -mplatform | grep -q -i centos; then
-  dnf_install $rhel_packages
-  dnf_install $rhel_atom
-  dnf_install $rhel_dropbox
-  dnf_install $rhel_erlang
-  echo "CentOS is not fully supported"
 elif python -mplatform | grep -q -i opensuse; then
   sudo zypper in -y $rhel_packages $rhel_atom $rhel_dropbox $rhel_erlang
 else
   echo "Your Linux distribution is not supported"
 fi
+
+# Install Elixir
+git clone $rhel_elixir && cd elixir && git checkout v1.2.3 && sudo make install
 
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash

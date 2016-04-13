@@ -9,7 +9,6 @@ Loosely supports the following Linux distributions:
 
 1. [Fedora](https://getfedora.org/)
 1. [OpenSUSE](https://www.opensuse.org/)
-1. [CentOS](https://www.centos.org/).
 1. [Ubuntu](http://www.ubuntu.com/) (Partial support)
 
 Installs and configures:
