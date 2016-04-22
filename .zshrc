@@ -24,7 +24,6 @@ export EDITOR=vim
 export DOCKER=docker
 # Distribution specific
 if python -mplatform | grep -q -i ubuntu; then
-  export DOCKER=docker.io
   add_plugins=(ubuntu)
   plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
 elif python -mplatform | grep -q -i fedora; then
