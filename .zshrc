@@ -1,3 +1,5 @@
+. $HOME/.profile
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -17,7 +19,7 @@ base_plugins=(git adb common-aliases systemd urltools vagrant web-search nyan do
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:$PATH"
 
 export EDITOR=vim
 
