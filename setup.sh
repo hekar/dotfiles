@@ -60,7 +60,7 @@ mkdir $HOME/tmp
 # ============================
 # Setup applications in ~/share
 
-cd $HOME/share
+pushd $HOME/share
 
 # Firefox Developer Edition
 curl -o firefox.tar.bz2 "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-47.0a2.en-US.linux-x86_64.tar.bz2"
@@ -72,7 +72,13 @@ git clone git@github.com:dylanaraps/neofetch.git
 # youtube-open
 git clone git@github.com:hekar/youtube-open.git
 
-cd -
+# Powerline fonts
+git clone git@github.com:powerline/fonts.git
+pushd fonts
+./install.sh
+popd
+
+popd # $HOME/share
 
 # Install vim-n-home
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
