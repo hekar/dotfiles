@@ -16,55 +16,75 @@ autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
-let g:airline#extensions#tabline#enabled=1
-let g:erlangFoldSplitFunction=0
-
 " ----------------------
 " Global options
 " ----------------------
 syntax on
 filetype plugin indent on
 set autochdir
-set clipboard=unnamedplus
-set mouse=a
-set smartcase
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-set nu
-set ruler
-set cmdheight=1
-set hlsearch
-set ignorecase
-set nobackup
-set nowb
-set noswapfile
-set cursorline
-set viminfo=
-set laststatus=2
-set expandtab
-set smarttab
-set autoindent
-set shiftwidth=2
-set tabstop=2
-set autoindent
-set ai
+syntax on
+set background=dark
+set ruler                     " show the line number on the bar
+set more                      " use more prompt
+set autoread                  " watch for file changes
+set number                    " line numbers
+set hidden
+set noautowrite               " don't automagically write on :next
+set lazyredraw                " don't redraw when don't have to
+set showmode
 set showcmd
-set incsearch
-set autochdir
-set backspace=2
-set nocompatible
-set autoread
-set ffs=unix,dos,mac
-set noconfirm
-set history=1000
-set noshowmatch
-set t_Co=256
-set wildmenu " display options for tab completion in command mode
-set wildmode=list:longest
-set virtualedit=
-set clipboard=unnamed
+set nocompatible              " vim, not vi
+set autoindent smartindent    " auto/smart indent
+set smarttab                  " tab and backspace are smart
+set tabstop=2                 " 6 spaces
+set shiftwidth=2
+set scrolloff=5               " keep at least 5 lines above/below
+set sidescrolloff=5           " keep at least 5 lines left/right
+set history=200
+set backspace=indent,eol,start
+set linebreak
+set cmdheight=2               " command line two lines high
+set undolevels=1000           " 1000 undos
+set updatecount=100           " switch every 100 chars
+set complete=.,w,b,u,U,t,i,d  " do lots of scanning on tab completion
+set ttyfast                   " we have a fast terminal
+set noerrorbells              " No error bells please
+set shell=bash
+set fileformats=unix
+set ff=unix
+filetype on                   " Enable filetype detection
+filetype indent on            " Enable filetype-specific indenting
+filetype plugin on            " Enable filetype-specific plugins
+set wildmode=longest:full
+set wildmenu                  " menu has tab completion
+let maplocalleader=','        " all my macros start with ,
+set laststatus=2
+
+"  searching
+set incsearch                 " incremental search
+set ignorecase                " search ignoring case
+set hlsearch                  " highlight the search
+set showmatch                 " show matching bracket
+set diffopt=filler,iwhite     " ignore all whitespace and sync
+
+"  backup
+set backup
+set backupdir=~/.vim_backup
+set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
+"set viminfo='100,f1
+
+" spelling
+if v:version >= 700
+  " Enable spell check for text files
+  autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en
+endif
+
+" ----------------------
+" Airline
+" ----------------------
+
+let g:airline#extensions#tabline#enabled=1
+let g:erlangFoldSplitFunction=0
 
 " ----------------------
 " Default key mappings
@@ -115,21 +135,11 @@ let g:multi_cursor_quit_key='<Esc>'
 " Powerline
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
-set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 "let g:Powerline_mode_V="V·LINE"
 "let g:Powerline_mode_cv="V·BLOCK"
 "let g:Powerline_mode_S="S·LINE"
 "let g:Powerline_mode_cs="S·BLOCK"
-
-" Solarized
-colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-
-hi statusline ctermbg=green ctermfg=black cterm=none
-hi statuslinenc ctermbg=black ctermfg=green cterm=none
-hi vertsplit ctermbg=black ctermfg=black cterm=none
 
 " The Silver Searcher (required by ctrlp)
 if executable('ag')
@@ -153,12 +163,24 @@ nnoremap \ :Ag<SPACE>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
+
+" ----------------------
 " ctrlp
+" ----------------------
+
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+nmap <leader>p :CtrlP<cr>
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
 
 set grepprg=ag\ --nogroup\ --nocolor
 let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
@@ -166,24 +188,14 @@ let g:ctrlp_use_caching=0
 let g:ctrlp_follow_symlinks=1
 let g:acp_enableAtStartup = 0
 
-" Use neocomplcache.
+" ----------------------
+" neocomplcache
+" ----------------------
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 1
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-"let g:neocomplcache_enable_camel_case_completion = 1
-"let g:neocomplcache_enable_underbar_completion = 1
-
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
@@ -207,17 +219,8 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
 
 " For cursor moving in insert mode(Not recommended)
-"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
 inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-" Or set this.
-"let g:neocomplcache_enable_cursor_hold_i = 1
-" Or set this.
-"let g:neocomplcache_enable_insert_char_pre = 1
-
-" AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -225,27 +228,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
 nmap =j :%!python -m json.tool<CR>
 
 " ----------------------
 " Miscellaneous
 " ----------------------
-
-" Strip trailing whitespace
-nnoremap <leader>rstrip :call <SID>StripTrailingWhitespaces()<CR>
 
 " Easier window navigation
 nnoremap <C-h> <C-w>h
@@ -257,16 +244,13 @@ nnoremap <C-l> <C-w>l
 nnoremap j gj
 nnoremap k gk
 
-function! <SID>StripTrailingWhitespaces()
-  " Save last search and cursor position
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
 
-  " Strip trailing whitespace, suppressing no-match error
-  %s/\s\+$//e
+" ----------------------
+" Tabs
+" ----------------------
 
-  " Restore
-  let @/=_s
-  call cursor(l, c)
-endfunction
+nmap <leader>t :enew<cr>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
