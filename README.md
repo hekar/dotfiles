@@ -1,11 +1,9 @@
 dotfiles
 ==========
 
-These are my dotfiles. Have not changed the repository name, because many machines are pointed to this repository.
-
 I primarily use Fedora. OSes other than Fedora are not well tested.
 
-Loosely supports the following Linux distributions:
+Supports the following Linux distributions:
 
 1. [Fedora](https://getfedora.org/)
 1. [OpenSUSE](https://www.opensuse.org/)
@@ -33,7 +31,7 @@ Clone this repository. Copy the contents (including hidden files) to ~/.
 
 ## Shortcuts
 
-Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is rather slim.
+Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is slim.
 
 ### i3
 
