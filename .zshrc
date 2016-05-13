@@ -100,6 +100,7 @@ alias ca-web="cd $HOME/Dropbox/ca/web/"
 alias gp='git pull'
 alias gr='git rebase -i'
 alias gpu='git push'
+alias git-log-latest='git log --graph --all --format=format:"%h - (%ai) %s -- %cn %d" --abbrev-commit --date=relative -10'
 
 #IPTables
 alias ipt='sudo /sbin/iptables'

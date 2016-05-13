@@ -14,9 +14,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 export GATLING_HOME=$HOME/share/gatling
 export PATH=$GATLING_HOME/bin:$PATH
 
-if [ -n "$ZSH_VERSION" ]; then
-  # Nothing to do
-elif [ -n "$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
   if [ -f "$HOME/.bashrc" ]; then
 . "$HOME/.bashrc"
