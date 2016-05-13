@@ -111,7 +111,8 @@ alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
 alias firewall=iptlist
 
 # Power states
-alias sc-suspend='sudo systemctl suspend'
+alias sc-suspend-nolock='sudo systemctl suspend'
+alias sc-suspend='i3lock -c 000000 && sc-suspend-nolock'
 alias sc-halt='sudo systemctl poweroff'
 alias sc-reboot='sudo systemctl reboot'
 
