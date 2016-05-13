@@ -2,13 +2,13 @@
 
 generic_elixir="https://github.com/elixir-lang/elixir.git"
 
-deb_packages="git git-gui vim g++ zsh docker docker-compose"
+deb_packages="git git-gui vim g++ zsh docker docker-compose htop"
 deb_atom="https://github.com/atom/atom/releases/download/v1.5.3/atom-amd64.deb"
 deb_dropbox="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
 deb_elixir=""
 deb_erlang=""
 
-rhel_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark"
+rhel_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop"
 rhel_atom="https://github.com/atom/atom/releases/download/v1.5.3/atom.x86_64.rpm"
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
 rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_18.2-1~centos~7_amd64.rpm"
@@ -46,7 +46,7 @@ nvm install 4 && nvm install 5
 nvm alias default 4
 
 # Install Atom Text Editor packages
-apm install sync-settings editorconfig linter linter-eslint atom-beautify
+apm install sync-settings editorconfig linter linter-eslint atom-beautify ensime
 
 # ============================
 # Create additional folders  in ~/
