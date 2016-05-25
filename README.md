@@ -16,13 +16,16 @@ Installs and configures:
 1. [zsh](http://www.zsh.org/)
 1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 1. [atom](https://atom.io/)
+1. Erlang
+1. Elixir
+1. Firefox Developer Edition
 
 ## Quick Setup
 
-See [setup.sh](https://raw.github.com/hekar/vim-n-home/master/setup.sh) for the exact details of the script.
+See [setup.sh](https://raw.github.com/hekar/dotfiles/master/setup.sh) for the exact details of the script.
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/hekar/vim-n-home/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/hekar/dotfiles/master/setup.sh)"
 ```
 
 ## Manual Setup
