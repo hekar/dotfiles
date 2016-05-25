@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 generic_elixir="https://github.com/elixir-lang/elixir.git"
 
@@ -17,12 +17,13 @@ rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_g
 alias dnf_install='sudo dnf install -y '
 
 if python -mplatform | grep -q -i ubuntu; then
-  sudo apt-get update -y && sudo apt-get install -y $deb_packages
-  curl -O $deb_atom
-  curl -O $deb_dropox
-  sudo dpkg -i $deb_atom
-  sudo dpkg -i $deb_packages
-  sudo apt-get install -f
+  sudo apt update -y
+  sudo apt install -y $deb_packages
+  wget $deb_atom -O atom.deb
+  wget $deb_dropbox -O dropbox.deb
+  sudo dpkg -i atom.deb
+  sudo dpkg -i dropbox.deb
+  sudo apt install -f
 elif python -mplatform | grep -q -i fedora; then
   # Install RPM fusion
   dnf_install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -36,8 +37,6 @@ else
   echo "Your Linux distribution is not supported"
 fi
 
-# Install Elixir
-git clone $rhel_elixir && cd elixir && git checkout v1.2.3 && sudo make install
 
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
@@ -62,6 +61,9 @@ mkdir $HOME/tmp
 
 pushd $HOME/share
 
+# Install Elixir
+git clone $generic_elixir && cd elixir && git checkout v1.2.3 && sudo make install
+
 # Firefox Developer Edition
 curl -o firefox.tar.bz2 "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-47.0a2.en-US.linux-x86_64.tar.bz2"
 tar -jxvf firefox.tar.bz2
@@ -80,9 +82,9 @@ popd
 
 popd # $HOME/share
 
-# Install vim-n-home
+# Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
 git clone git@github.com:hekar/vim-n-home.git &&
-cp -R ./vim-n-home/. ~/ &&
+cp -R ./dotfiles/. ~/ &&
 mv ~/.git ~/.homegit &&
-rm -Rf ./vim-n-home
+rm -Rf ./dotfiles
