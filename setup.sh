@@ -84,7 +84,7 @@ popd # $HOME/share
 
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
-git clone git@github.com:hekar/vim-n-home.git &&
+git clone git@github.com:hekar/dotfiles.git &&
 cp -R ./dotfiles/. ~/ &&
 mv ~/.git ~/.homegit &&
 rm -Rf ./dotfiles
