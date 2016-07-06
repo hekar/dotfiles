@@ -90,6 +90,7 @@ alias sdc-start='sudo $DOCKER_COMPOSE start'
 alias sdc-stop='sudo $DOCKER_COMPOSE stop'
 alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-version='sudo $DOCKER_COMPOSE version'
+alias sdc-rbup='sdc-rm -f && sdc-build && sdc-up'
 
 # Elixir
 alias ca="cd $HOME/Dropbox/ca"
