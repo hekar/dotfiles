@@ -1,11 +1,9 @@
 dotfiles
 ==========
 
-These are my dotfiles. Have not changed the repository name, because many machines are pointed to this repository.
-
 I primarily use Fedora. OSes other than Fedora are not well tested.
 
-Loosely supports the following Linux distributions:
+Supports the following Linux distributions:
 
 1. [Fedora](https://getfedora.org/)
 1. [OpenSUSE](https://www.opensuse.org/)
@@ -18,13 +16,16 @@ Installs and configures:
 1. [zsh](http://www.zsh.org/)
 1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 1. [atom](https://atom.io/)
+1. Erlang
+1. Elixir
+1. Firefox Developer Edition
 
 ## Quick Setup
 
-See [setup.sh](https://raw.github.com/hekar/vim-n-home/master/setup.sh) for the exact details of the script.
+See [setup.sh](https://raw.github.com/hekar/dotfiles/master/setup.sh) for the exact details of the script.
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/hekar/vim-n-home/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/hekar/dotfiles/master/setup.sh)"
 ```
 
 ## Manual Setup
@@ -33,7 +34,7 @@ Clone this repository. Copy the contents (including hidden files) to ~/.
 
 ## Shortcuts
 
-Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is rather slim.
+Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is slim.
 
 ### i3
 

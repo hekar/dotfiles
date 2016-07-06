@@ -83,6 +83,7 @@ endif
 " Airline
 " ----------------------
 
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled=1
 let g:erlangFoldSplitFunction=0
 
@@ -130,16 +131,6 @@ let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-D>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
-
-" Powerline
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set fillchars+=stl:\ ,stlnc:\
-"let g:Powerline_mode_V="V·LINE"
-"let g:Powerline_mode_cv="V·BLOCK"
-"let g:Powerline_mode_S="S·LINE"
-"let g:Powerline_mode_cs="S·BLOCK"
 
 " The Silver Searcher (required by ctrlp)
 if executable('ag')
