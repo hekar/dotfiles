@@ -1,13 +1,13 @@
 dotfiles
 ==========
 
-I primarily use Fedora. OSes other than Fedora are not well tested.
+I primarily use Fedora. Distributions other than Fedora are not well tested.
 
-Supports the following Linux distributions:
+Supports the following distributions:
 
 1. [Fedora](https://getfedora.org/)
 1. [OpenSUSE](https://www.opensuse.org/)
-1. [Ubuntu](http://www.ubuntu.com/) (Partial support)
+1. [Ubuntu](http://www.ubuntu.com/) (Partially)
 
 Installs and configures:
 
@@ -16,9 +16,9 @@ Installs and configures:
 1. [zsh](http://www.zsh.org/)
 1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 1. [atom](https://atom.io/)
-1. Erlang
-1. Elixir
-1. Firefox Developer Edition
+1. [Erlang](https://www.erlang-solutions.com/resources/download.html)
+1. [Elixir](http://elixir-lang.org/)
+1. [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
 
 ## Quick Setup
 
