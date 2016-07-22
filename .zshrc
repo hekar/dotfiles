@@ -130,6 +130,9 @@ alias media='cd /media/share/complete'
 alias df='df -h'
 alias usage='du -d 1 -h'
 
+# Strace
+alias st-forked='strace -ff -o trace/out -f --'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
