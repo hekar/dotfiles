@@ -43,3 +43,8 @@ Few keyboard shortcuts are listed, because the likelihood of this being used by 
 | Lock Screen           | Mod + L             |
 | Switch Workspace      | Mod + (1-9)           |
 | Move Window to Workspace | Mod + Shift + (1-9)             |
+| Reload configuration | Mod + Shift + C             |
+| Restart i3wm | Mod + Shift + R             |
+| Exit i3wm | Mod + Shift + E             |
+| Split Vertical | Mod + V             |
+| Split Horizontal | Mod + H             |
