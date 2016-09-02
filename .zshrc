@@ -125,6 +125,7 @@ alias rm='rm -I --preserve-root'
 
 # Misc
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
+alias d2lgit='git --git-dir=$HOME/.d2lgit --work-tree=$HOME'
 alias grn='grep -nir'
 alias media='cd /media/share/complete'
 alias df='df -h'
