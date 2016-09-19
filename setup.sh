@@ -14,6 +14,9 @@ rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_g
 
 suse_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop"
 
+shopt -s expand_aliases
+alias dnf_install='sudo dnf install -y'
+alias zyp_in='sudo zypper install -y'
 if python -mplatform | grep -q -i ubuntu; then
   sudo apt update -y
   sudo apt install -y $deb_packages
@@ -26,18 +29,16 @@ if python -mplatform | grep -q -i ubuntu; then
   sudo apt install -f
 elif python -mplatform | grep -q -i fedora; then
   # Install RPM fusion
-	alias dnf_install='sudo dnf install -y '
   dnf_install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
   dnf_install $rhel_packages
   dnf_install $rhel_atom
   dnf_install $rhel_dropbox
   dnf_install $rhel_erlang
 elif python -mplatform | grep -q -i opensuse; then
-	alias zyp_in='sudo zypper install -y'
   zyp_in $suse_packages
-	zyp_in $rhel_atom
-	zyp_in $rhel_dropbox
-	zyp_in $rhel_erlang
+  zyp_in $rhel_atom
+  zyp_in $rhel_dropbox
+  zyp_in $rhel_erlang
 else
   echo "Your Linux distribution is not supported"
 fi
