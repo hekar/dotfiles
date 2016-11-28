@@ -120,8 +120,8 @@ map <C-k> dd
 map <C-t> :tabnew .<Enter>
 map <C-w> :bdelete<Enter>
 map <C-h> :s/
-map <leader>[ :bprev<CR>
-map <leader>] :bnext<CR>
+map <leader>[ :tabprev<CR>
+map <leader>] :tabnext<CR>
 
 " ----------------------
 " Plugin options
