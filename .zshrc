@@ -1,10 +1,14 @@
 . $HOME/.profile
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#ZSH_THEME="amuse"
-ZSH_THEME="bureau"
+ZSH_THEME="agnoster"
+#ZSH_THEME="bureau"
+
+DEFAULT_USER=$USERNAME
 
 export UPDATE_ZSH_DAYS=30
 
