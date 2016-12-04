@@ -1,0 +1,14 @@
+[user]
+	name = Hekar Khani
+	email = hekark@gmail.com
+[core]
+	editor = /usr/bin/vim
+[alias]
+	fe = fetch
+	re = reset
+	co = checkout
+	br = branch
+	st = status
+	ci = commit
+	unstage = reset HEAD --
+	last = log -p -1 HEAD
