@@ -75,6 +75,14 @@ git clone $generic_elixir && cd elixir && git checkout v1.2.3 && sudo make insta
 curl -o firefox.tar.bz2 "https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-47.0a2.en-US.linux-x86_64.tar.bz2"
 tar -jxvf firefox.tar.bz2
 
+# Neovim
+git clone https://github.com/neovim/neovim.git
+pushd neovim
+sudo dnf install -y libtool libtool-ltdl-devel libvterm-devel
+make
+sudo make install
+popd
+
 # neofetch
 git clone git@github.com:dylanaraps/neofetch.git
 
