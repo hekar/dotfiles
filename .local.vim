@@ -1,0 +1,1 @@
+" Local neovim configuration

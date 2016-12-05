@@ -13,6 +13,8 @@ autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
+let g:python_host_prog = '/usr/bin/python3'
+
 "|  \/  (_) |                        (_)
 "| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
 "| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
@@ -125,14 +127,15 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
   call dein#add('junegunn/vim-easy-align')
   call dein#add('MartinLafreniere/vim-PairTools')
   call dein#add('othree/jspc.vim')
+  call dein#add('mhartington/oceanic-next')
   " call dein#local('~/GitHub', {},['deoplete-html'])
   " call dein#local('~/GitHub', {},['deoplete-npm'])
-  call dein#local('~/GitHub', {},['vim-folds'])
-  call dein#local('~/GitHub', {},['oceanic-next'])
-  call dein#local('~/GitHub', {},['operator-next'])
-  call dein#local('~/GitHub', {},['nvim-typescript'])
-  call dein#local('~/GitHub', {},['vim-angular2-snippets'])
-  call dein#local('~/GitHub', {},['vim-typings'])
+  " call dein#local('~/GitHub', {},['vim-folds'])
+  " call dein#local('~/GitHub', {},['oceanic-next'])
+  " call dein#local('~/GitHub', {},['operator-next'])
+  " call dein#local('~/GitHub', {},['nvim-typescript'])
+  " call dein#local('~/GitHub', {},['vim-angular2-snippets'])
+  " call dein#local('~/GitHub', {},['vim-typings'])
   " call dein#local('~/GitHub', {},['mdown.vim'])
 " these need to be added last
   " call dein#add('ryanoasis/vim-devicons')
