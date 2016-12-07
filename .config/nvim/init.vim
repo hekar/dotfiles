@@ -15,6 +15,14 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 let g:python_host_prog = '/usr/bin/python3'
 
+nmap <F2> :update<CR>
+vmap <F2> <Esc><F2>gv
+imap <F2> <c-o><F2>
+map <F3> :w<Enter>
+map <F4> :wq!<Enter>
+map <F5> gg=G
+map <C-t> :tabnew .<Enter>
+
 "|  \/  (_) |                        (_)
 "| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
 "| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
