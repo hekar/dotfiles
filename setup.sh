@@ -88,6 +88,7 @@ git clone https://github.com/neovim/neovim.git
 pushd neovim
 make
 sudo make install
+sudo pip3 install --upgrade pip && pip3 install --user neovim
 popd
 
 # neofetch
