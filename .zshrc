@@ -1,6 +1,7 @@
 . $HOME/.profile
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
+export GOPATH=$HOME/gitmrk
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -19,11 +20,12 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-base_plugins=(git adb common-aliases systemd urltools vagrant web-search nyan docker docker-compose dirhistory rsync)
+base_plugins=(adb common-aliases systemd urltools vagrant web-search nyan docker docker-compose dirhistory rsync)
 
 # User configuration
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:$PATH"
+export PATH="$PATH:$HOME/github/gitmrk/bin"
 
 export EDITOR=vim
 
