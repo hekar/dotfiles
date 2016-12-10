@@ -70,6 +70,7 @@ apm install editorconfig linter linter-eslint atom-beautify
 mkdir $HOME/bin
 mkdir $HOME/code
 mkdir $HOME/github
+mkdir $HOME/github/gitmrk
 mkdir $HOME/share
 mkdir $HOME/tmp
 mkdir $HOME/.vim_backup
@@ -104,6 +105,11 @@ pushd fonts
 popd
 
 popd # $HOME/share
+
+# Golang dependencies
+go get -u github.com/constabulary/gb/...
+go get -u github.com/nsf/gocode
+go get -u github.com/libgit2/git2go
 
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
