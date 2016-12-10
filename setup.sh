@@ -8,7 +8,7 @@ deb_dropbox="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10
 deb_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0.2-1~ubuntu~xenial_amd64.deb"
 deb_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake"
+rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake golang clang i3lock"
 rhel_atom="https://github.com/atom/atom/releases/download/v1.12.6/atom.x86_64.rpm"
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
 rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0~centos~7_amd64.rpm"
@@ -81,7 +81,7 @@ rm -Rf $HOME/Documents $HOME/Music $HOME/Pictures $HOME/Public $HOME/Templates $
 pushd $HOME/share
 
 # Install Elixir
-git clone $generic_elixir && cd elixir && git checkout v1.3.4 && sudo make install
+git clone $generic_elixir && pushd elixir && git checkout v1.3.4 && sudo make install && popd
 
 # Neovim
 git clone https://github.com/neovim/neovim.git
