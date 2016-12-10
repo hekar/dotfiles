@@ -110,6 +110,7 @@ popd # $HOME/share
 go get -u github.com/constabulary/gb/...
 go get -u github.com/nsf/gocode
 go get -u github.com/libgit2/git2go
+go get -u github.com/zenazn/goji
 
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
