@@ -1,7 +1,7 @@
 . $HOME/.profile
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-export GOPATH=$HOME/gitmrk
+export GOPATH=$HOME/github/gitmrk
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
