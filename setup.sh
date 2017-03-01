@@ -113,6 +113,7 @@ go get -u github.com/libgit2/git2go
 go get -u github.com/zenazn/goji
 go get -u github.com/davecgh/go-spew/spew
 go get -u github.com/spf13/viper
+go get -u github.com/google/go-github/github
 
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
