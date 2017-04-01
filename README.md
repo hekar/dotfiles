@@ -14,7 +14,7 @@ Installs and configures:
 1. [i3](https://i3wm.org/)
 1. [vim](http://www.vim.org/)
 1. [zsh](http://www.zsh.org/)
-1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh
+1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ## Quick Setup
 
