@@ -6,8 +6,7 @@ export GOPATH=$HOME/github/gitmrk
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="agnoster"
-#ZSH_THEME="bureau"
+ZSH_THEME="af-magic"
 
 DEFAULT_USER=$USERNAME
 
