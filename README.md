@@ -14,11 +14,7 @@ Installs and configures:
 1. [i3](https://i3wm.org/)
 1. [vim](http://www.vim.org/)
 1. [zsh](http://www.zsh.org/)
-1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-1. [atom](https://atom.io/)
-1. [Erlang](https://www.erlang-solutions.com/resources/download.html)
-1. [Elixir](http://elixir-lang.org/)
-1. [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/)
+1. [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh
 
 ## Quick Setup
 
