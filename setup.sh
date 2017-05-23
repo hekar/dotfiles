@@ -2,14 +2,12 @@
 
 generic_elixir="https://github.com/elixir-lang/elixir.git"
 
-deb_packages="i3 git git-gui vim g++ zsh docker docker-compose htop"
+deb_packages="i3 git git-gui vim g++ zsh docker docker-compose htop golang byzanz clang i3lock curl"
 deb_dropbox="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
-deb_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0.2-1~ubuntu~xenial_amd64.deb"
 deb_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
 rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake golang clang i3lock libgit2-devel"
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
-rhel_erlang="https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_19.0~centos~7_amd64.rpm"
 rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 rhel_jdk="http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.rpm"
 
@@ -23,10 +21,8 @@ if python -mplatform | grep -q -i ubuntu; then
   sudo apt update -y
   sudo apt install -y $deb_packages
   wget $deb_dropbox -O dropbox.deb
-  wget $deb_erlang -O erlang.deb
   wget $deb_chrome -O chrome.deb
   sudo dpkg -i dropbox.deb
-  sudo dpkg -i erlang.deb
   sudo dpkg -i chrome.deb
   sudo apt install -f
 elif python3 -mplatform | grep -q -i fedora; then
@@ -61,7 +57,7 @@ nvm alias default 6
 mkdir $HOME/bin
 mkdir $HOME/code
 mkdir $HOME/github
-mkdir $HOME/github/gitmrk
+mkdir $HOME/github/go
 mkdir $HOME/share
 mkdir $HOME/tmp
 mkdir $HOME/.vim_backup

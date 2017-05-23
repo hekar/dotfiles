@@ -1,7 +1,7 @@
 . $HOME/.profile
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-export GOPATH=$HOME/github/gitmrk
+export GOPATH=$HOME/github/go
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -24,7 +24,7 @@ base_plugins=(adb common-aliases systemd urltools vagrant web-search nyan docker
 # User configuration
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:$PATH"
-export PATH="$PATH:$HOME/github/gitmrk/bin"
+export PATH="$PATH:$HOME/github/go/bin"
 
 export EDITOR=vim
 
@@ -130,9 +130,7 @@ alias rm='rm -I --preserve-root'
 
 # Misc
 alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
-alias d2lgit='git --git-dir=$HOME/.d2lgit --work-tree=$HOME'
 alias grn='grep -nir'
-alias media='cd /media/share/complete'
 alias df='df -h'
 alias usage='du -d 1 -h'
 
