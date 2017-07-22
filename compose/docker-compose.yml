@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  mc:
+    image: memcached
+    mem_limit: 128000000000
+    ports:
+      - "11211:11211"
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+  adminer:
+    image: adminer
+    ports:
+      - "18080:8080"
