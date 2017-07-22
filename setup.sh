@@ -2,17 +2,15 @@
 
 generic_elixir="https://github.com/elixir-lang/elixir.git"
 
-deb_packages="i3 git git-gui vim g++ zsh docker docker-compose htop golang byzanz clang i3lock curl"
+deb_packages="i3 git git-gui vim g++ zsh docker docker-compose htop golang byzanz clang i3lock curl stow"
 deb_dropbox="https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
 deb_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake golang clang i3lock libgit2-devel"
+rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake golang clang i3lock libgit2-devel stow"
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
 rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
-rhel_jdk="http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.rpm"
 
-
-suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake"
+suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make gnome-tweak-tool gnome-pomodoro go go-doc libgit2-devel"
 
 shopt -s expand_aliases
 alias dnf_install='sudo dnf install -y'
@@ -32,16 +30,17 @@ elif python3 -mplatform | grep -q -i fedora; then
   dnf_install $rhel_dropbox
   dnf_install $rhel_erlang
   dnf_install $rhel_chrome
-  dnf_install $rhel_jdk
   sudo dnf remove -y java-1.8.0-openjdk-headless.x86_64
   dnf_install libtool libtool-ltdl-devel libvterm-devel
-elif python -mplatform | grep -q -i opensuse; then
+else
+  echo -e "\e[33m Your Linux distribution is not supported"
+  echo -e "\e[33m Assuming you are running OpenSUSE or OpenSUSE Tumbleweed"
+  wget https://dl.google.com/linux/linux_signing_key.pub
+  sudo rpm --import linux_signing_key.pub
   zyp_in $suse_packages
   zyp_in $rhel_dropbox
   zyp_in $rhel_erlang
   zyp_in $rhel_chrome
-else
-  echo "Your Linux distribution is not supported"
 fi
 
 
@@ -97,7 +96,7 @@ go get -u github.com/bradfitz/gomemcache/memcache
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
 git clone git@github.com:hekar/dotfiles.git &&
-cp -R ./dotfiles/. ~/ &&
-mv ~/.git ~/.homegit &&
-rm -Rf ./dotfiles
+rm ~/.bashrc ~/.config/user-dirs.dirs ~/.config/user-dirs.locale ~/.profile &&
+cd ./dotfiles &&
+stow .
 
