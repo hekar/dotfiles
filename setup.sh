@@ -10,7 +10,7 @@ rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark ht
 rhel_dropbox="https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm"
 rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make gnome-tweak-tool gnome-pomodoro go go-doc libgit2-devel"
+suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make gnome-tweak-tool gnome-pomodoro go go-doc libgit2-devel automake"
 
 shopt -s expand_aliases
 alias dnf_install='sudo dnf install -y'
@@ -37,6 +37,11 @@ else
   echo -e "\e[33m Assuming you are running OpenSUSE or OpenSUSE Tumbleweed"
   wget https://dl.google.com/linux/linux_signing_key.pub
   sudo rpm --import linux_signing_key.pub
+	sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+	sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
+	sudo zypper refresh
+	sudo zypper install -y code
+	zyp_in "https://atom-installer.github.com/v1.18.0/atom.x86_64.rpm?s=1497483731&ext=.rpm"
   zyp_in $suse_packages
   zyp_in $rhel_dropbox
   zyp_in $rhel_erlang
