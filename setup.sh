@@ -92,6 +92,7 @@ go get -u github.com/google/go-github/github
 go get -u github.com/garyburd/redigo/redis
 go get -u github.com/Rafflecopter/golang-relyq/relyq
 go get -u github.com/Rafflecopter/golang-relyq/storage/redis
+go get -u github.com/bradfitz/gomemcache/memcache
 
 # Install dotfiles
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
