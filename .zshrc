@@ -133,6 +133,7 @@ alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
 alias grn='grep -nir'
 alias df='df -h'
 alias usage='du -d 1 -h'
+alias ctalk='cd ~/github/go/src/github.com/hekar/codetalks'
 
 # Strace
 alias st-forked='strace -ff -o trace/out -f --'
