@@ -1,6 +1,6 @@
 #!/bin/bash
 
-generic_elixir="https://github.com/elixir-lang/elixir.git"
+chrome_package="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
 rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
@@ -17,7 +17,7 @@ sudo zypper refresh
 sudo zypper install -y code
 zyp_in "https://atom-installer.github.com/v1.18.0/atom.x86_64.rpm?s=1497483731&ext=.rpm"
 zyp_in $suse_packages
-zyp_in $rhel_chrome
+zyp_in $chrome_package
 
 
 # Install node version manager
