@@ -2,9 +2,7 @@
 
 chrome_package="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
-
-suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make go go-doc libgit2-devel automake i3 i3lock i3status tmux rxvt-unicode urxvt-font-size"
+suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make go go-doc libgit2-devel automake i3 i3lock i3status tmux rxvt-unicode urxvt-font-size libtool emacs"
 
 shopt -s expand_aliases
 alias zyp_in='sudo zypper install -y'
@@ -19,6 +17,8 @@ zyp_in "https://atom-installer.github.com/v1.18.0/atom.x86_64.rpm?s=1497483731&e
 zyp_in $suse_packages
 zyp_in $chrome_package
 
+# Install Spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
