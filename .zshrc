@@ -29,30 +29,11 @@ export PATH="$PATH:$HOME/github/go/bin"
 export EDITOR=vim
 
 export DOCKER=docker
-# Distribution specific
-if python -mplatform | grep -q -i ubuntu; then
-  add_plugins=(ubuntu)
-  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
-elif python -mplatform | grep -q -i fedora; then
-  alias di='sudo dnf install -y'
-  alias ds='sudo dnf search'
-  add_plugins=(dnf)
-  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
-elif python -mplatform | grep -q -i centos; then
-  add_plugins=(dnf)
-  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
-elif python -mplatform | grep -q -i opensuse; then
-  add_plugins=(zypper)
-  plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
-else
-  plugins=$base_plugins
-fi
+# This is for OpenSUSE only
+add_plugins=(zypper)
+plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
 
 source $ZSH/oh-my-zsh.sh
-
-if python -mplatform | grep -q -i ubuntu; then
-  unalias ag
-fi
 
 # Android
 export LANGUAGE=en

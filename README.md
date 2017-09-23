@@ -1,13 +1,11 @@
 dotfiles
 ==========
 
-I primarily use Fedora. Distributions other than Fedora are not well tested.
+**_Removed all Linux distributions that are not OpenSUSE Tumbleweed_**
 
 Supports the following distributions:
 
-1. [Fedora](https://getfedora.org/)
 1. [OpenSUSE](https://www.opensuse.org/)
-1. [Ubuntu](http://www.ubuntu.com/) (Partially)
 
 Installs and configures:
 
