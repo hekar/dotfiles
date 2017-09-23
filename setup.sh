@@ -8,7 +8,7 @@ deb_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_
 rhel_packages="i3 git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop ImageMagick-devel byzanz glew-devel cmake golang clang i3lock libgit2-devel stow"
 rhel_chrome="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make gnome-tweak-tool gnome-pomodoro go go-doc libgit2-devel automake"
+suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make go go-doc libgit2-devel automake i3 i3lock i3status tmux rxvt-unicode urxvt-font-size"
 
 shopt -s expand_aliases
 alias dnf_install='sudo dnf install -y'
