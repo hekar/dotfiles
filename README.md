@@ -1,11 +1,9 @@
 dotfiles
 ==========
 
-**_Removed all Linux distributions that are not OpenSUSE Tumbleweed_**
+**_Dropped support for all Linux distributions, but OpenSUSE Tumbleweed_**
 
-Supports the following distributions:
-
-1. [OpenSUSE](https://www.opensuse.org/)
+- [OpenSUSE](https://www.opensuse.org/)
 
 Installs and configures:
 
