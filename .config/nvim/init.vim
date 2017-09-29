@@ -13,7 +13,9 @@ autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
-let g:python_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python'
+let g:python2_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
