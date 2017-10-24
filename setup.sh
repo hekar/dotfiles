@@ -2,7 +2,7 @@
 
 chrome_package="https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
-suse_packages="git vim gcc-c++ zsh git-gui docker docker-compose wireshark htop cmake stow make go go-doc libgit2-devel automake i3 i3lock i3status tmux rxvt-unicode urxvt-font-size libtool emacs xclip"
+suse_packages="git vim gcc-c++ zsh git-gui docker wireshark htop cmake stow make go go-doc libgit2-devel automake i3 i3lock i3status tmux rxvt-unicode urxvt-font-size libtool emacs xclip"
 
 shopt -s expand_aliases
 alias zyp_in='sudo zypper install -y'
