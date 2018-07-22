@@ -115,6 +115,8 @@ alias grn='grep -nir'
 alias df='df -h'
 alias usage='du -d 1 -h'
 alias ctalk='cd ~/github/go/src/github.com/hekar/codetalks'
+alias cweb='cd ~/code/codetalks-web'
+alias cnode='cd ~/code/codetalks-node'
 
 # Strace
 alias st-forked='strace -ff -o trace/out -f --'
@@ -127,3 +129,9 @@ PERL5LIB="/home/hekar/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/hekar/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/hekar/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/hekar/perl5"; export PERL_MM_OPT;
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/hekar/google-cloud-sdk/path.zsh.inc' ]; then source '/home/hekar/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/hekar/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/hekar/google-cloud-sdk/completion.zsh.inc'; fi
