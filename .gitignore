@@ -1,8 +1,1 @@
-*
-!.vimrc
-!.bashrc
-!.gitignore
-!.config/hotkeys/*.hotkeys
-!.config/synapse/*.json
-!.vim/*
-
+dotfiles/
