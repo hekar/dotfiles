@@ -1,7 +1,7 @@
 dotfiles
 ==========
 
-**_Dropped support for all Linux distributions, but OpenSUSE Tumbleweed_**
+**_Dropped support for all Linux distributions except OpenSUSE Tumbleweed_**
 
 - [OpenSUSE](https://www.opensuse.org/)
 
@@ -24,19 +24,3 @@ sh -c "$(curl -fsSL https://raw.github.com/hekar/dotfiles/master/setup.sh)"
 
 Clone this repository. Copy the contents (including hidden files) to ~/.
 
-## Shortcuts
-
-Few keyboard shortcuts are listed, because the likelihood of this being used by more than myself is slim.
-
-### i3
-
-| Description           | Key                 |
-|-----------------------|---------------------|
-| Lock Screen           | Mod + L             |
-| Switch Workspace      | Mod + (1-9)           |
-| Move Window to Workspace | Mod + Shift + (1-9)             |
-| Reload configuration | Mod + Shift + C             |
-| Restart i3wm | Mod + Shift + R             |
-| Exit i3wm | Mod + Shift + E             |
-| Split Vertical | Mod + V             |
-| Split Horizontal | Mod + H             |
