@@ -19,6 +19,7 @@ InsecureSkipVerify = true
 
 [backends]
   [backends.node]
+    [backends.node.loadbalancer.stickiness]
     [backends.node.servers.s1]
     url = "http://localhost:5000"
   [backends.web]
@@ -29,7 +30,7 @@ InsecureSkipVerify = true
   [frontends.web]
   backend = "web"
     [frontends.web.routes.test_1]
-    rule = "Path:/"
+    rule = "PathPrefixStrip:/"
 
   [frontends.node]
   backend = "node"
