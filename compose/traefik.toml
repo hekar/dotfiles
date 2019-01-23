@@ -1,0 +1,37 @@
+debug = true
+
+logLevel = "DEBUG"
+InsecureSkipVerify = true 
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  # [entryPoints.https]
+  # address = ":443"
+  #   [entryPoints.https.tls]
+
+[file]
+
+[api]
+  entryPoint = "traefik"
+  dashboard = true
+  address = ":8080"
+
+[backends]
+  [backends.node]
+    [backends.node.servers.s1]
+    url = "http://localhost:5000"
+  [backends.web]
+    [backends.web.servers.s1]
+    url = "http://localhost:5001"
+
+[frontends]
+  [frontends.web]
+  backend = "web"
+    [frontends.web.routes.test_1]
+    rule = "Path:/"
+
+  [frontends.node]
+  backend = "node"
+    [frontends.node.routes.test_1]
+    rule = "PathPrefixStrip:/api"
