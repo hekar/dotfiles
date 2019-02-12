@@ -28,11 +28,14 @@ InsecureSkipVerify = true
 
 [frontends]
   [frontends.web]
+  priority = 1
   backend = "web"
-    [frontends.web.routes.test_1]
+    [frontends.web.routes.r1]
     rule = "PathPrefixStrip:/"
 
   [frontends.node]
+  priority = 2
   backend = "node"
-    [frontends.node.routes.test_1]
-    rule = "PathPrefixStrip:/api"
+    [frontends.node.routes.r1]
+    rule = "PathPrefix:/api/"
+
