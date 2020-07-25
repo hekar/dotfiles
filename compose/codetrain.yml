@@ -1,0 +1,36 @@
+# Configure a tmux session using
+# https://github.com/tmux-python/tmuxp
+# for admintrain and codetrain development
+#
+# Assumes the following folder structure
+#  ~/code
+#    .../admintrain
+#    .../codetrain
+#
+# Requires docker-compose for postgres and memcached
+#
+
+session_name: 4-pane-split
+windows:
+- window_name: docker
+  layout: tiled
+  panes:
+    - shell_command:
+      - cd ~/compose
+      - sudo docker-compose up
+- window_name: admintrain
+  layout: tiled
+  panes:
+    - shell_command:
+      - cd ~/code/admintrain
+      - rails s
+    - shell_command:
+      - cd ~/code/admintrain
+- window_name: codetrain
+  layout: tiled
+  panes:
+    - shell_command:
+      - cd ~/code/codetrain
+      - rails s
+    - shell_command:
+      - cd ~/code/codetrain
