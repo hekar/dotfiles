@@ -66,8 +66,7 @@ set showmatch                 " show matching bracket
 set diffopt=filler,iwhite     " ignore all whitespace and sync
 
 "  backup
-set backup
-set backupdir=~/.vim_backup
+set nobackup
 set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
 "set viminfo='100,f1
 
