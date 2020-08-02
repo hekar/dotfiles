@@ -1,0 +1,20 @@
+# Configure a tmux session using
+# https://github.com/tmux-python/tmuxp
+#
+# used for developing the jrnlwarp project
+
+session_name: 4-pane-split
+windows:
+- window_name: tools
+  layout: tiled
+  panes:
+    - shell_command:
+      - cd ~/code/jrnlwarp
+- window_name: jrnlwarp
+  layout: tiled
+  panes:
+    - shell_command:
+      - cd ~/code/jrnlwarp
+      - rails s -b 0.0.0.0
+    - shell_command:
+      - cd ~/code/jrnlwarp

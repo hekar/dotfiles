@@ -18,19 +18,11 @@ windows:
     - shell_command:
       - cd ~/compose
       - sudo docker-compose up
-- window_name: admintrain
+- window_name: transgrate
   layout: tiled
   panes:
     - shell_command:
-      - cd ~/code/admintrain
-      - rails s
+      - cd ~/code/transgrate
+      - rails s -b 0.0.0.0
     - shell_command:
-      - cd ~/code/admintrain
-- window_name: codetrain
-  layout: tiled
-  panes:
-    - shell_command:
-      - cd ~/code/codetrain
-      - rails s
-    - shell_command:
-      - cd ~/code/codetrain
+      - cd ~/code/transgrate
