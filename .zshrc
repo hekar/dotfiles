@@ -28,10 +28,6 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:$PATH"
 export EDITOR=vim
 
 export DOCKER=docker
-# This is for OpenSUSE only
-add_plugins=(zypper)
-plugins=( "${base_plugins[@]}" "${add_plugins[@]}" )
-
 source $ZSH/oh-my-zsh.sh
 
 # Android
