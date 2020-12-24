@@ -19,12 +19,11 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-base_plugins=(adb common-aliases systemd urltools vagrant web-search nyan docker docker-compose dirhistory rsync)
+base_plugins=(adb common-aliases systemd urltools web-search docker docker-compose dirhistory rsync)
 
 # User configuration
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:$PATH"
-export PATH="$PATH:$HOME/github/go/bin"
 
 export EDITOR=vim
 
@@ -78,57 +77,11 @@ alias sdc-up='sudo $DOCKER_COMPOSE up'
 alias sdc-version='sudo $DOCKER_COMPOSE version'
 alias sdc-rbup='sdc-rm -f && sdc-build && sdc-up'
 
-# Elixir
-alias ca="cd $HOME/Dropbox/ca"
-alias ca-lib="cd $HOME/Dropbox/ca/lib/"
-alias ca-web="cd $HOME/Dropbox/ca/web/"
-
-# Git
-alias gp='git pull'
-alias gr='git rebase -i'
-alias gpu='git push'
-alias git-log-latest='git log --graph --all --format=format:"%h - (%ai) %s -- %cn %d" --abbrev-commit --date=relative -10'
-
-#IPTables
-alias ipt='sudo /sbin/iptables'
-alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
-alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
-alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
-alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
-alias firewall=iptlist
-
-# Power states
-alias sc-suspend-nolock='sudo systemctl suspend'
-alias sc-suspend='i3lock -c 000000 && sc-suspend-nolock'
-alias sc-halt='sudo systemctl poweroff'
-alias sc-reboot='sudo systemctl reboot'
-
-# Sec
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-alias rm='rm -I --preserve-root'
-
-# Misc
-alias hgit='git --git-dir=$HOME/.homegit --work-tree=$HOME'
-alias grn='grep -nir'
-alias df='df -h'
-alias usage='du -d 1 -h'
-alias ctalk='cd ~/github/go/src/github.com/hekar/codetalks'
-alias cweb='cd ~/code/codetalks-web'
-alias cnode='cd ~/code/codetalks-node'
-
 # Strace
 alias st-forked='strace -ff -o trace/out -f --'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-PATH="/home/hekar/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/hekar/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/hekar/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/hekar/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/hekar/perl5"; export PERL_MM_OPT;
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/hekar/google-cloud-sdk/path.zsh.inc' ]; then source '/home/hekar/google-cloud-sdk/path.zsh.inc'; fi
