@@ -13,8 +13,8 @@ zyp_in $chrome_package
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 . ~/.nvm/nvm.sh
-nvm install 14
-nvm alias default 14
+nvm install 16
+nvm alias default 16
 
 # ============================
 # Create additional folders  in ~/
