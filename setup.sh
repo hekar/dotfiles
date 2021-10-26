@@ -22,6 +22,9 @@ suse_packages="git
 sudo zypper -q refresh
 sudo zypper -q install -y $suse_packages || true
 
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 || true
+
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 . ~/.nvm/nvm.sh
@@ -38,9 +41,8 @@ mkdir $HOME/bin \
     $HOME/.vim_backup || true
 rm -Rf $HOME/Documents $HOME/Music $HOME/Pictures $HOME/Public $HOME/Templates $HOME/Videos || true
 
-pushd $HOME/share
 # Setup applications in ~/share
-
+pushd $HOME/share
 popd # $HOME/share
 
 # Install OhMyZsh
@@ -50,5 +52,22 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 git clone git@github.com:hekar/dotfiles.git &&
 rm ~/.bashrc ~/.profile ~/.gitconfig ~/.zshrc &&
 cd ./dotfiles &&
-stow .
+stow . || true
 
+# Install asdf plugins
+asdf_install () {
+  $HOME/.asdf/bin/asdf plugin add $1 || true
+  $HOME/.asdf/bin/asdf install $1 latest || true
+  $HOME/.asdf/bin/asdf global $1 latest || true
+}
+
+asdf_install awscli
+asdf_install terraform
+asdf_install terragrunt
+asdf_install nomad
+asdf_install packer
+asdf_install starship
+asdf_install 'terraform-ls'
+asdf_install 'terraform-docs'
+asdf_install kubectl
+asdf_install kubectx

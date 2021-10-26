@@ -19,7 +19,7 @@ COMPLETION_WAITING_DOTS="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-base_plugins=(adb common-aliases systemd urltools web-search docker docker-compose dirhistory rsync)
+base_plugins=(asdf adb common-aliases systemd urltools web-search docker docker-compose dirhistory rsync)
 
 # User configuration
 
@@ -89,3 +89,7 @@ if [ -f '/home/hekar/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
+# Enable ASDF
+export PATH="$PATH:$HOME/.asdf/bin"
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
