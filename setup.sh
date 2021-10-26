@@ -54,6 +54,9 @@ rm ~/.bashrc ~/.profile ~/.gitconfig ~/.zshrc &&
 cd ./dotfiles &&
 stow . || true
 
+# Install tmuxp
+pip install --user tmuxp || true
+
 # Install asdf plugins
 asdf_install () {
   $HOME/.asdf/bin/asdf plugin add $1 || true
