@@ -2,7 +2,7 @@ dotfiles
 ==========
 
 Requirements
-- OpenSUSE Tumbleweed
+- Archlinux
 
 ## Quick Setup
 

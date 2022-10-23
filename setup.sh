@@ -1,49 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -xe
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 # Install default packages
-suse_packages="git
-    vim
-    gcc-c++
-    zsh
-    git-gui
-    docker
-    htop
-    cmake
-    stow
-    make
-    go-doc
-    libgit2-devel
-    automake
-    tmux
-"
+packages=(readarray -t a < $SCRIPT_DIR/packages.txt)
 
-sudo zypper -q refresh
-sudo zypper -q install -y $suse_packages || true
+sudo pacman -Syu $packages || true
 
-# Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 || true
+# Install https://github.com/asdf-vm/asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2 || true
 
-# Install node version manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-. ~/.nvm/nvm.sh
-nvm install 16
-nvm alias default 16
+# Install volta version manager
+curl https://get.volta.sh | bash
+
+$HOME/.volta/bin/volta install node@18
 
 # ============================
 # Create additional folders  in ~/
 
-mkdir $HOME/bin \
-    $HOME/code \
+mkdir -p $HOME/bin \
+    $HOME/c \
     $HOME/share \
-    $HOME/tmp \
-    $HOME/.vim_backup || true
-rm -Rf $HOME/Documents $HOME/Music $HOME/Pictures $HOME/Public $HOME/Templates $HOME/Videos || true
-
-# Setup applications in ~/share
-pushd $HOME/share
-popd # $HOME/share
+    $HOME/tmp || true
 
 # Install OhMyZsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
