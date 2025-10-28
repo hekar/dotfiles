@@ -1,0 +1,11 @@
+[Unit]
+Description=Performance Mode Service
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/hr/.config/sway/quick_performance.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
